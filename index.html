@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicação de Análise de Mercado</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Índice dos Tópicos -->
+    
+    <nav>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <ul id="menu" class="menu-hidden">
+            <li><a href="#top">Início</a></li>
+            <li><a href="#candles">Candles</a></li>
+            <li><a href="#figuras">Figuras</a></li>
+            <li><a href="#tendencia">Tendência</a></li>
+            <li><a href="#suporte">Suporte</a></li>
+            <li><a href="#resistencia">Resistência</a></li>
+            <li><a href="#reversao">Reversão</a></li>
+            <li><a href="#fibonacci">Fibonacci</a></li>
+            <!-- Adicione mais links conforme necessário -->
+        </ul>
+    </nav>
+
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="https://br.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Monitore todos os mercados no TradingView</span></a></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+    "symbols": [
+      {
+        "proName": "FOREXCOM:SPXUSD",
+        "title": "S&P 500 Index"
+      },
+      {
+        "proName": "FOREXCOM:NSXUSD",
+        "title": "US 100 Cash CFD"
+      },
+      {
+        "proName": "FX_IDC:EURUSD",
+        "title": "EUR to USD"
+      },
+      {
+        "proName": "BITSTAMP:BTCUSD",
+        "title": "Bitcoin"
+      },
+      {
+        "proName": "BITSTAMP:ETHUSD",
+        "title": "Ethereum"
+      },
+      {
+        "description": "BTC|BRL",
+        "proName": "BINANCE:BTCBRL"
+      },
+      {
+        "description": "BTC|EUR",
+        "proName": "BINANCE:BTCEUR"
+      },
+      {
+        "description": "USDT|EUR",
+        "proName": "COINBASE:USDTEUR"
+      },
+      {
+        "description": "BRL|EUR",
+        "proName": "FX_IDC:BRLEUR"
+      }
+    ],
+    "showSymbolLogo": true,
+    "isTransparent": false,
+    "displayMode": "adaptive",
+    "colorTheme": "dark",
+    "locale": "br"
+  }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
+
+    <!-- Seções de Conteúdo -->
+    <section id="candles">
+        <h2>PADRÕES DE CANDLES</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img1.png" alt="Principais Padrões de Candle">
+                <div class="overlay">Principais Padrões de Candles</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img2.png" alt="Candle Martelo">
+                <div class="overlay">Martelo</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img3.png" alt="Candle Enforcado">
+                <div class="overlay">Enforcado</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img4.png" alt="Candle Harami de Alta">
+                <div class="overlay">Harami de Alta</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img5.png" alt="Candle Harami de Queda">
+                <div class="overlay">Harami de Queda </div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img6.png" alt="Candle Piercing">
+                <div class="overlay">Piercing</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img7.png" alt="Candle Engolfo de Alta">
+                <div class="overlay">Engolfo de Alta</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img8.png" alt="Candle Engolfo de Queda">
+                <div class="overlay">Engolfo de Queda</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img9.png" alt="Candle Martelo Invertido">
+                <div class="overlay">Martelo Invertido</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img10.png" alt="Candle Estrela Cadente">
+                <div class="overlay">Estrela Cadente</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img11.png" alt="Candle Nuvem Negra ">
+                <div class="overlay">Nuvem Negra</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img12.png" alt="Candle Estrela da Noite">
+                <div class="overlay">Estrela da Noite</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img13.png" alt="Candle Estrela da manhã">
+                <div class="overlay">Estrela da Manhã</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img14.png" alt="Candle Doji ">
+                <div class="overlay">Doji</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img15.png" alt="Lembre-se!">
+                <div class="overlay">IMPORTANTE</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img16.png" alt="Lembre-se! ">
+                <div class="overlay">IMPORTANTE</div>
+            </div>
+        </div>
+         <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img17.png" alt="Lembre-se!">
+                <div class="overlay">IMPORTANTE</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img18.png" alt="Lembre-se!">
+                <div class="overlay">IMPORTANTE</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img19.png" alt="Lembre-se!">
+                <div class="overlay">IMPORTANTE</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="figuras">
+        <h2>FIGURAS DE MERCADO</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img20.png" alt="Figura de Mercado">
+                <div class="overlay">IMPORTE</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img21.png" alt="Figura de Mercado">
+                <div class="overlay">Bandeira</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img22.png" alt="Figura de Mercado">
+                <div class="overlay">Flâmula</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img23.png" alt="Figura de Mercado">
+                <div class="overlay">Wedge</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img24.png" alt="Figura de Mercado">
+                <div class="overlay">Topo e Fundo DUPLO</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img25.png" alt="Figura de Mercado">
+                <div class="overlay">Simetria</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img26.png" alt="Figura de Mercado">
+                <div class="overlay">OCO - Ombro,Cabeça e Ombro</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img27.png" alt="Figura de Mercado">
+                <div class="overlay">Canal</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img28.png" alt="Figura de Mercado">
+                <div class="overlay">Bandeira / Entrada / Alvo</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img29.png" alt="Figura de Mercado">
+                <div class="overlay">Bandeira</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img30.png" alt="Figura de Mercado">
+                <div class="overlay">Flâmula / Entrada / Alvo</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img31.png" alt="Figura de Mercado">
+                <div class="overlay">Flâmula</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img32.png" alt="Figura de Mercado">
+                <div class="overlay">Wedge / Entrada / Alvo</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img33.png" alt="Figura de Mercado">
+                <div class="overlay">Wedge</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img34.png" alt="Figura de Mercado">
+                <div class="overlay">Topo / Fundo / Duplo</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img35.png" alt="Figura de Mercado">
+                <div class="overlay">Topo Duplo</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img36.png" alt="Figura de Mercado">
+                <div class="overlay">Fundo Duplo</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img37.png" alt="Figura de Mercado">
+                <div class="overlay">Simetria</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img38.png" alt="Figura de Mercado">
+                <div class="overlay">Simetria de Alta</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img39.png" alt="Figura de Mercado">
+                <div class="overlay">Simetria de Baixa</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img40.png" alt="Figura de Mercado">
+                <div class="overlay">OCO - Ombro, Cabeça e Ombro</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img41.png" alt="Figura de Mercado">
+                <div class="overlay">OCO</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img42.png" alt="Figura de Mercado">
+                <div class="overlay">Canal</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img43.png" alt="Figura de Mercado">
+                <div class="overlay">Canal</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tendencia">
+        <h2>TENDÊNCIA DE MERCADO</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img44.png" alt="Tendência de Mercado">
+                <div class="overlay">IMPORTANTE</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img45.png" alt="Tendência de Queda">
+                <div class="overlay">Tendência de Queda</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img46.png" alt="Tendência de Alta">
+                <div class="overlay">Tendência de Alta</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img47.png" alt="Consolidação">
+                <div class="overlay">Consolidação</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img48.png" alt="3 Pullbacks Alta / Baixa">
+                <div class="overlay">3 pullbacks na Tendência</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img49.png" alt="3 Pullbacks / Baixa">
+                <div class="overlay">3 pullbacks na Tendência</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="suporte">
+        <h2>SUPORTE</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img50.png" alt="Suporte">
+                <div class="overlay">Suporte</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img51.png" alt="Suporte">
+                <div class="overlay">Suporte</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resistencia">
+        <h2>RESISTÊNCIA</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img52.png" alt="Resistência">
+                <div class="overlay">Resistência</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img53.png" alt="Resistência">
+                <div class="overlay">Resistência</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reversao">
+        <h2>REVERSÃO</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img54.png" alt="Reversão de Mercado">
+                <div class="overlay">Reversão</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img55.png" alt="Reversão de Mercado">
+                <div class="overlay">Reversão</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fibonacci">
+        <h2>FIBONACCI</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img56.png" alt="FIBONACCI NA ALTA">
+                <div class="overlay">FIBONACCI</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img57.png" alt="FIBONACCI NA BAIXA">
+                <div class="overlay">FIBONACCI</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section links">
+                <a href="https://borainvestir.b3.com.br/tipos-de-investimentos/renda-variavel/tudo-sobre-day-trade/">B3</a>
+                <a href="https://www.modalmais.com.br/blog/day-trade-para-iniciantes/">Modal</a>
+                <a href="https://wa.me/message/XZV5C5BECFWXL1">Contato</a>
+                <a href="#top">Home</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a href="https://coincrypto.world">Copyright ©2024 All rights reserved | Max Trader</a>
+        </div>
+    </footer>
+
+    <!-- Modal para Visualização de Imagens -->
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <div id="caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <a href="#top" id="back-to-top">↑</a>
+</body>
+</html>
+
+
